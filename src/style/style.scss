@@ -1,0 +1,201 @@
+@import "init";
+@import "mixin";
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=PT+Sans+Narrow&family=Shadows+Into+Light&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+$clr_dark: #0C090D;
+$clr_bright: #FFFFFF;
+$clr_alert: #DA332E;
+$clr_light: #FEF751;
+$clr_assist: #AA8F66;
+$font_title: 'Oswald', sans-serif;
+$font-content: 'PT Sans Narrow', sans-serif;
+$font-art: 'Shadows Into Light', cursive;
+
+.App{
+    overflow-x: hidden;
+}
+h1{
+    font-size: 1.8rem;
+    padding: .5rem;
+}
+h2{
+    font-size: 1.4rem;
+    padding: .5rem; 
+}
+span, p{
+    padding: .5rem;
+}
+
+strong{
+    color: $clr_alert;
+}
+ul{
+    @include flexR;
+}
+button, li{
+    font-family: $font_content;
+}
+button{
+    margin: .5rem 1rem;
+    padding: .5rem;
+}
+li{
+    margin: .5rem;
+    align-items: center;
+    text-decoration: none;
+}
+img{
+    width: 100%
+}
+.alert{
+    background-color: $clr_alert;
+}
+
+input[type="text"], textarea{
+    min-width: 280px;
+    padding: .5rem;
+}
+
+
+
+//Global---------------------------------------------------------
+
+.App {
+  text-align: center;
+}
+.nav{
+    ul{
+        @include flexR;
+        justify-content: center;
+        .nav_item {
+            margin: 1rem;
+        }
+    }
+}
+
+
+.box{
+    @include flexC;
+    width: 100vw;
+    &_title{
+        @include flexC;
+        padding: .5rem;
+                width: 100%;
+
+        background-color: red;
+        
+    }
+    &_content{
+        @include flexC;
+        padding: .5rem;
+        width: 100%;
+
+        background-color: pink;
+        >div{
+            margin-bottom: .5rem;
+        }
+    }
+}
+
+.display_area, .input_area{
+    @include flexC;
+}
+
+
+
+.clockContainer{
+    @include flexR;
+    justify-content: space-around;
+    width: 100%;
+}
+.clockItem{
+    width: 280px;
+    height: 280px;
+    margin: .5rem;
+    clip-path: circle(50% at 50% 50%);
+    @include flexC;
+    background-color: aqua;
+    position: relative;
+    .clock_num{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        @include flexC;
+        top: 0;
+        right: 0;
+        
+        .vertical{
+            @include flexC;
+            position: absolute;
+            justify-content: space-between;
+            width: 1rem;
+            height: 100%;
+            z-index: 100;
+        }
+        .horizion{
+            @include flexR;
+            position: absolute;
+            justify-content: space-between;
+            height: 1rem;
+            width: 100%;
+            z-index: 100;
+        }     
+    }
+    .clock_hands{
+        background-color: #DA332E;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        @include flexC;
+        .dot{
+            width: .5rem;
+            height: .5rem;
+            background-color: black;
+            position: absolute;
+        }
+        .hr_hand{
+            width: .6rem;
+            height: 2.6rem;
+            background-color: #FEF751;
+
+        }
+        .min_hand{
+            width: .3rem;
+            height: 3.4rem;
+            background-color: greenyellow;
+
+        }
+        .sec_hand{
+            width: .1rem;
+            height: 4rem;
+            background-color: plum;
+
+        }
+    }
+}
+
+.exchange_result{
+    @include flexR;
+    justify-content: space-around;
+    li{
+        @include flexC;
+        width: 10rem;
+        margin: .5rem;
+        padding: 1rem;
+        background-color: yellow;
+        span{
+            background-color: orange;
+        }
+    }
+}
+
+
+
+
+
+.footer{
+    @include flexC;
+}
